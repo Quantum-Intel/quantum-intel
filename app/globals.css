@@ -1,26 +1,106 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-qi-navy: #0A1A2F;
+  --color-qi-charcoal: #14171C;
+  --color-qi-graphite: #2A2F36;
+  --color-qi-deep-green: #1F3A2E;
+  --color-qi-gold: #B8945A;
+  --color-qi-gold-light: #D4B07A;
+  --color-qi-off-white: #F2EFE9;
+  --color-qi-stone: #C9C6BF;
+  --color-qi-line: #2F3540;
+
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+  --font-display: var(--font-inter-tight), "Inter Tight", "Inter", system-ui, sans-serif;
+  --font-editorial: var(--font-source-serif), "Source Serif 4", Georgia, serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0A1A2F;
+  color: #F2EFE9;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+:focus-visible {
+  outline: 2px solid #B8945A;
+  outline-offset: 2px;
+}
+
+/* ─── Buttons ────────────────────────────────────────────── */
+
+.qi-btn-gold {
+  background: #B8945A;
+  color: #0A1A2F;
+  transition: background 0.15s ease;
+}
+.qi-btn-gold:hover { background: #D4B07A; }
+
+.qi-btn-gold-outline {
+  color: #B8945A;
+  border: 1px solid rgba(184, 148, 90, 0.45);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.qi-btn-gold-outline:hover {
+  background: rgba(184, 148, 90, 0.08);
+  border-color: rgba(184, 148, 90, 0.7);
+}
+
+.qi-btn-outline {
+  color: #F2EFE9;
+  border: 1px solid rgba(242, 239, 233, 0.25);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.qi-btn-outline:hover {
+  background: rgba(242, 239, 233, 0.04);
+  border-color: rgba(242, 239, 233, 0.45);
+}
+
+/* ─── Text hover ─────────────────────────────────────────── */
+
+.qi-text-hover-gold {
+  color: #6B6660;
+  transition: color 0.15s ease;
+}
+.qi-text-hover-gold:hover { color: #B8945A; }
+
+.qi-text-hover-white {
+  color: rgba(242, 239, 233, 0.5);
+  transition: color 0.15s ease;
+}
+.qi-text-hover-white:hover { color: #F2EFE9; }
+
+.qi-text-hover-stone {
+  color: rgba(242, 239, 233, 0.45);
+  transition: color 0.15s ease;
+}
+.qi-text-hover-stone:hover { color: #F2EFE9; }
+
+/* ─── Cards ──────────────────────────────────────────────── */
+
+.qi-card-hover {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.qi-card-hover:hover {
+  border-color: rgba(184, 148, 90, 0.4) !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.qi-card-border-hover {
+  transition: border-color 0.2s ease;
+}
+.qi-card-border-hover:hover {
+  border-color: rgba(184, 148, 90, 0.3) !important;
 }
