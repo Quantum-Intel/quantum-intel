@@ -22,13 +22,13 @@ export default function ACPSection() {
             className="text-[10px] tracking-[0.28em] uppercase"
             style={{ color: "#B8945A", fontFamily: "var(--font-display)" }}
           >
-            02 — Featured Programme
+            02 — Featured Program
           </span>
           <div className="flex-1 h-px" style={{ background: "rgba(10,26,47,0.07)" }} />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-          {/* Left — Programme identity panel */}
+          {/* Left — Program identity panel */}
           <div>
             <div
               className="border p-10 mb-8"
@@ -45,7 +45,7 @@ export default function ACPSection() {
                   className="text-[10px] tracking-[0.25em] uppercase block mb-2"
                   style={{ color: "#B8945A", fontFamily: "var(--font-display)" }}
                 >
-                  Flagship Programme
+                  Flagship Program
                 </span>
                 <h2
                   className="text-[28px] md:text-[34px] font-semibold leading-tight tracking-tight"
@@ -97,7 +97,7 @@ export default function ACPSection() {
               className="text-[18px] md:text-[20px] leading-[1.75] mb-6"
               style={{ color: "#0A1A2F", fontFamily: "var(--font-editorial)", fontStyle: "italic" }}
             >
-              An integrated capability development programme across the five
+              An integrated capability development program across the five
               domains shaping the future of African security and governance.
             </p>
             <div className="h-px mb-6" style={{ background: "rgba(10,26,47,0.07)" }} />
@@ -114,7 +114,7 @@ export default function ACPSection() {
               className="text-[15px] leading-[1.8] mb-10"
               style={{ color: "#5A5550" }}
             >
-              The programme draws on senior practitioners and subject-matter
+              The program draws on senior practitioners and subject-matter
               authorities across defence, intelligence, security, technology, and
               policy backgrounds. Engagements are conducted with strict
               confidentiality as a default.
@@ -124,7 +124,7 @@ export default function ACPSection() {
               className="qi-btn-gold-outline inline-flex items-center gap-2.5 px-6 py-4 text-[11px] tracking-[0.12em] uppercase font-semibold self-start"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Explore the Programme
+              Explore the Program
               <ArrowRight size={12} />
             </Link>
           </div>

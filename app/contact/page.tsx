@@ -573,11 +573,11 @@ export default function ContactPage() {
                 All initial enquiries
               </p>
               <a
-                href="mailto:enquiries@quantumintel.africa"
+                href="mailto:corporate@quantumintel.co"
                 className="text-[13px] qi-text-hover-gold"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                enquiries@quantumintel.africa
+                corporate@quantumintel.co
               </a>
             </div>
           </div>
@@ -599,7 +599,7 @@ export default function ContactPage() {
               </p>
             </div>
             {[
-              { purpose: "General enquiries", email: "enquiries@quantumintel.africa" },
+              { purpose: "General enquiries", email: "corporate@quantumintel.co" },
               { purpose: "Proposals & programme requests", email: "proposals@quantumintel.africa" },
               { purpose: "Partnership enquiries", email: "partners@quantumintel.africa" },
               { purpose: "Media & press", email: "media@quantumintel.africa" },

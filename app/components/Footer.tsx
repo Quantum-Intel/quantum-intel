@@ -76,10 +76,10 @@ export default function Footer() {
               <p className="text-[12px]" style={{ color: "#C9C6BF" }}>Lagos, Nigeria</p>
               <p className="text-[12px]" style={{ color: "#C9C6BF" }}>Abuja, Nigeria</p>
               <a
-                href="mailto:enquiries@quantumintel.africa"
+                href="mailto:corporate@quantumintel.co"
                 className="text-[12px] qi-text-hover-gold block"
               >
-                enquiries@quantumintel.africa
+                corporate@quantumintel.co
               </a>
             </div>
           </div>

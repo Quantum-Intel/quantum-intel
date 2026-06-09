@@ -146,7 +146,7 @@ export default function TermsPage() {
                 ))}
               </div>
               <p className="mt-10 text-[12.5px] leading-[1.7]" style={{ color: "#9A9690" }}>
-                For enquiries about these terms: <a href="mailto:enquiries@quantumintel.africa" style={{ color: "#B8945A" }}>enquiries@quantumintel.africa</a>
+                For enquiries about these terms: <a href="mailto:corporate@quantumintel.co" style={{ color: "#B8945A" }}>corporate@quantumintel.co</a>
               </p>
             </div>
           </div>

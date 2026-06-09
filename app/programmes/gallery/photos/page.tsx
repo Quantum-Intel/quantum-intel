@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ImageOff } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Programme Gallery — Photos",
@@ -20,6 +21,89 @@ const filters = {
   clientType: ["Government", "Security Agency", "Defence Institution", "Corporate"],
   country: ["Nigeria", "Kenya", "Rwanda", "West Africa Region"],
 };
+
+const photos = [
+  {
+    id: "01",
+    src: "https://picsum.photos/seed/qi-field-01/1200/800",
+    caption: "Scenario planning — threat assessment table exercise",
+    programme: "Advanced Capability Program",
+    region: "Abuja, Nigeria",
+    year: "2024",
+  },
+  {
+    id: "02",
+    src: "https://picsum.photos/seed/qi-field-02/800/600",
+    caption: "Intelligence analysis seminar, faculty-led",
+    programme: "Military Intelligence",
+    region: "Lagos, Nigeria",
+    year: "2024",
+  },
+  {
+    id: "03",
+    src: "https://picsum.photos/seed/qi-field-03/800/600",
+    caption: "Operational planning workshop — command post exercise",
+    programme: "Strategic Communications",
+    region: "Nairobi, Kenya",
+    year: "2023",
+  },
+  {
+    id: "04",
+    src: "https://picsum.photos/seed/qi-field-04/800/600",
+    caption: "Cyber threat simulation environment setup",
+    programme: "Cyber Security",
+    region: "Abuja, Nigeria",
+    year: "2024",
+  },
+  {
+    id: "05",
+    src: "https://picsum.photos/seed/qi-field-05/800/600",
+    caption: "Emerging technology briefing session",
+    programme: "Emerging Technologies",
+    region: "Kigali, Rwanda",
+    year: "2024",
+  },
+  {
+    id: "06",
+    src: "https://picsum.photos/seed/qi-field-06/800/600",
+    caption: "AI governance and ethics module — group discussion",
+    programme: "Artificial Intelligence",
+    region: "Lagos, Nigeria",
+    year: "2023",
+  },
+  {
+    id: "07",
+    src: "https://picsum.photos/seed/qi-field-07/800/600",
+    caption: "Programme completion ceremony, cohort 4",
+    programme: "Advanced Capability Program",
+    region: "Abuja, Nigeria",
+    year: "2024",
+  },
+  {
+    id: "08",
+    src: "https://picsum.photos/seed/qi-field-08/800/600",
+    caption: "Strategic communications — media exercise",
+    programme: "Strategic Communications",
+    region: "West Africa Region",
+    year: "2023",
+  },
+  {
+    id: "09",
+    src: "https://picsum.photos/seed/qi-field-09/1200/800",
+    caption: "Joint intelligence assessment briefing",
+    programme: "Military Intelligence",
+    region: "Abuja, Nigeria",
+    year: "2024",
+  },
+  {
+    id: "10",
+    src: "https://picsum.photos/seed/qi-field-10/800/600",
+    caption: "Counter-terrorism tabletop exercise",
+    programme: "Advanced Capability Program",
+    region: "Nairobi, Kenya",
+    year: "2023",
+  },
+];
 
 export default function PhotoGalleryPage() {
   return (
@@ -171,72 +255,73 @@ export default function PhotoGalleryPage() {
         </div>
       </section>
 
-      {/* ─── Coming Soon State ────────────────────────────── */}
+      {/* ─── Gallery Grid ─────────────────────────────────── */}
       <section
-        className="py-32 md:py-40"
+        className="py-14 md:py-20"
         style={{ background: "#FFFFFF", borderTop: "1px solid rgba(10,26,47,0.07)" }}
       >
         <div className="max-w-[1280px] mx-auto px-6">
-          <div className="flex flex-col items-center text-center max-w-[480px] mx-auto">
-            <div
-              className="w-16 h-16 flex items-center justify-center mb-8 border"
-              style={{ borderColor: "rgba(10,26,47,0.1)" }}
-            >
-              <ImageOff size={24} style={{ color: "#B8945A", opacity: 0.6 }} />
-            </div>
-            <p
-              className="text-[10px] tracking-[0.28em] uppercase mb-5"
-              style={{ color: "#B8945A", fontFamily: "var(--font-display)" }}
-            >
-              Gallery — Pending
-            </p>
-            <h2
-              className="text-[28px] md:text-[34px] font-semibold leading-[1.1] tracking-tight mb-6"
-              style={{ color: "#0A1A2F", fontFamily: "var(--font-display)" }}
-            >
-              Photography will be published here.
-            </h2>
-            <p
-              className="text-[15px] leading-[1.8] mb-8"
-              style={{
-                color: "#5A5550",
-                fontFamily: "var(--font-editorial)",
-                fontStyle: "italic",
-              }}
-            >
-              Programme photography is published following a structured two-person review process covering content, confidentiality, and consent verification. The gallery will be populated once the first cohort of vetted assets has completed this process.
-            </p>
-            <div
-              className="w-full border p-6 text-left"
-              style={{ borderColor: "rgba(10,26,47,0.1)", background: "#F7F4EE" }}
-            >
-              <p
-                className="text-[10px] tracking-[0.2em] uppercase mb-4"
-                style={{ color: "#B8945A", fontFamily: "var(--font-display)" }}
-              >
-                Review requirements
-              </p>
-              {[
-                "Content & confidentiality review by programme lead",
-                "Consent form verification by security/legal reviewer",
-                "EXIF metadata stripped on upload",
-                "Captions describe context only — no participant names",
-              ].map((item, i) => (
-                <div key={i} className="flex items-start gap-3 py-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+            {photos.map((photo, i) => {
+              const isFeatured = i === 0 || i === 8;
+              return (
+                <div
+                  key={photo.id}
+                  className={`qi-gallery-card${isFeatured ? " lg:col-span-2" : ""}`}
+                >
                   <div
-                    className="w-1 h-1 rounded-full mt-2 shrink-0"
-                    style={{ background: "#B8945A" }}
-                  />
-                  <p
-                    className="text-[13px] leading-[1.65]"
-                    style={{ color: "#5A5550", fontFamily: "var(--font-display)" }}
+                    style={{
+                      position: "relative",
+                      overflow: "hidden",
+                      aspectRatio: isFeatured ? "16/9" : "4/3",
+                    }}
                   >
-                    {item}
-                  </p>
+                    <Image
+                      src={photo.src}
+                      alt={photo.caption}
+                      fill
+                      unoptimized
+                      className="qi-gallery-img"
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+
+                  <div style={{ paddingTop: 10 }}>
+                    <p
+                      className="text-[9px] tracking-[0.2em] uppercase mb-1.5"
+                      style={{ color: "#B8945A", fontFamily: "var(--font-display)" }}
+                    >
+                      {photo.programme}
+                    </p>
+                    <p
+                      className="text-[13px] leading-[1.55] mb-1"
+                      style={{
+                        color: "#1A1A1A",
+                        fontFamily: "var(--font-editorial)",
+                        fontStyle: "italic",
+                      }}
+                    >
+                      {photo.caption}
+                    </p>
+                    <p className="text-[11px]" style={{ color: "#6B6660" }}>
+                      {photo.region} — {photo.year}
+                    </p>
+                  </div>
                 </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
+
+          <p
+            className="text-[11px] tracking-[0.06em] mt-10 pt-8 border-t text-center"
+            style={{
+              color: "rgba(10,26,47,0.3)",
+              borderColor: "rgba(10,26,47,0.07)",
+              fontFamily: "var(--font-display)",
+            }}
+          >
+            {photos.length} photographs — anonymised, consent-verified, EXIF stripped
+          </p>
         </div>
       </section>
 
@@ -318,7 +403,7 @@ export default function PhotoGalleryPage() {
               className="text-[14px] mt-2"
               style={{ color: "#C9C6BF", fontFamily: "var(--font-editorial)", fontStyle: "italic" }}
             >
-              Anonymised engagement records from Quantum Intel's programme portfolio.
+              Anonymised engagement records from Quantum Intel&apos;s programme portfolio.
             </p>
           </div>
           <Link

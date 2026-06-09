@@ -46,7 +46,7 @@ const principles = [
   },
   {
     number: "04",
-    title: "Faculty Calibre",
+    title: "Consultant Calibre",
     body: "Delivery is led by senior practitioners and subject-matter authorities drawn from defence, intelligence, security, technology, and policy backgrounds across Africa and internationally.",
   },
 ];
@@ -290,20 +290,6 @@ export default function AboutPage() {
               </p>
 
               <div className="h-px mb-8" style={{ background: "rgba(10,26,47,0.07)" }} />
-
-              <p
-                className="text-[16px] leading-[1.85] mb-8"
-                style={{ color: "#5A5550" }}
-              >
-                Our work is grounded in the African operating environment and informed by contemporary international doctrine. We engage with clients through confidential, structured channels, and we treat the seriousness of their mandate as our standard of conduct.
-              </p>
-
-              <p
-                className="text-[16px] leading-[1.85]"
-                style={{ color: "#5A5550" }}
-              >
-                Quantum Intel does not operate as a commercial training provider. We are a serious institutional partner for organisations that carry significant security, governance, and technology responsibilities. Our programmes are designed accordingly.
-              </p>
             </div>
           </div>
         </div>

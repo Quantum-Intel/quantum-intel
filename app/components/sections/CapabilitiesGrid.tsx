@@ -62,7 +62,7 @@ export default function CapabilitiesGrid() {
               className="text-[15px] leading-[1.75] max-w-[440px]"
               style={{ color: "#C9C6BF", fontFamily: "var(--font-editorial)", fontStyle: "italic" }}
             >
-              Each domain is delivered as standalone training and capability
+              Each domain can be delivered as standalone training and capability
               development, and combined into the Advanced Capability Program for
               institutions seeking comprehensive uplift.
             </p>

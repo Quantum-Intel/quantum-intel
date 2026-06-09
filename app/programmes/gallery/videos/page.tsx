@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Video } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import VideoCard from "@/app/components/VideoCard";
 
 export const metadata: Metadata = {
   title: "Programme Gallery — Videos",
@@ -28,6 +29,69 @@ const permittedContent = [
     title: "Anonymised testimonials",
     description:
       "Participant perspectives, attributed by sector and role only (e.g. 'Director, Federal Ministry'). Never by name or institution.",
+  },
+];
+
+// Placeholder video sources: W3Schools & MDN CC0 sample files.
+// Replace src values with real hosted content when available.
+const W3S_BBB = "https://www.w3schools.com/html/mov_bbb.mp4";
+const W3S_MOV = "https://www.w3schools.com/html/movie.mp4";
+const MDN_FLOWER = "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4";
+
+const videos = [
+  {
+    id: "01",
+    src: W3S_BBB,
+    poster: "https://picsum.photos/seed/qi-vid-01/1280/720",
+    title: "Advanced Capability Programme — Module Overview",
+    programme: "Advanced Capability Program",
+    duration: "4:32",
+    year: "2024",
+  },
+  {
+    id: "02",
+    src: MDN_FLOWER,
+    poster: "https://picsum.photos/seed/qi-vid-02/1280/720",
+    title: "Intelligence Analysis: Framework and Methodology",
+    programme: "Military Intelligence",
+    duration: "6:15",
+    year: "2024",
+  },
+  {
+    id: "03",
+    src: W3S_MOV,
+    poster: "https://picsum.photos/seed/qi-vid-03/1280/720",
+    title: "Cyber Threat Landscape — Faculty Briefing",
+    programme: "Cyber Security",
+    duration: "8:47",
+    year: "2024",
+  },
+  {
+    id: "04",
+    src: MDN_FLOWER,
+    poster: "https://picsum.photos/seed/qi-vid-04/1280/720",
+    title: "Emerging Technology in Conflict — Overview",
+    programme: "Emerging Technologies",
+    duration: "5:20",
+    year: "2023",
+  },
+  {
+    id: "05",
+    src: W3S_BBB,
+    poster: "https://picsum.photos/seed/qi-vid-05/1280/720",
+    title: "Strategic Communications Programme Walkthrough",
+    programme: "Strategic Communications",
+    duration: "3:58",
+    year: "2023",
+  },
+  {
+    id: "06",
+    src: W3S_MOV,
+    poster: "https://picsum.photos/seed/qi-vid-06/1280/720",
+    title: "AI Governance in Security Contexts",
+    programme: "Artificial Intelligence",
+    duration: "7:14",
+    year: "2024",
   },
 ];
 
@@ -124,77 +188,40 @@ export default function VideoGalleryPage() {
         </div>
       </section>
 
-      {/* ─── Coming Soon State ────────────────────────────── */}
+      {/* ─── Video Grid ───────────────────────────────────── */}
       <section
-        className="py-32 md:py-40"
+        className="py-14 md:py-20"
         style={{ background: "#FFFFFF", borderTop: "1px solid rgba(10,26,47,0.07)" }}
       >
         <div className="max-w-[1280px] mx-auto px-6">
-          <div className="flex flex-col items-center text-center max-w-[480px] mx-auto">
-            <div
-              className="w-16 h-16 flex items-center justify-center mb-8 border"
-              style={{ borderColor: "rgba(10,26,47,0.1)" }}
-            >
-              <Video size={24} style={{ color: "#B8945A", opacity: 0.6 }} />
-            </div>
-            <p
-              className="text-[10px] tracking-[0.28em] uppercase mb-5"
-              style={{ color: "#B8945A", fontFamily: "var(--font-display)" }}
-            >
-              Gallery — Pending
-            </p>
-            <h2
-              className="text-[28px] md:text-[34px] font-semibold leading-[1.1] tracking-tight mb-6"
-              style={{ color: "#0A1A2F", fontFamily: "var(--font-display)" }}
-            >
-              Video content will be published here.
-            </h2>
-            <p
-              className="text-[15px] leading-[1.8] mb-8"
-              style={{
-                color: "#5A5550",
-                fontFamily: "var(--font-editorial)",
-                fontStyle: "italic",
-              }}
-            >
-              Video content — faculty briefings, programme explainers, and selected programme b-roll — will be published to this gallery following the same two-person review process applied to all published gallery assets.
-            </p>
-            <div
-              className="w-full border p-6 text-left"
-              style={{ borderColor: "rgba(10,26,47,0.1)", background: "#F7F4EE" }}
-            >
-              <p
-                className="text-[10px] tracking-[0.2em] uppercase mb-4"
-                style={{ color: "#B8945A", fontFamily: "var(--font-display)" }}
-              >
-                Permitted video content
-              </p>
-              {permittedContent.map((item, i) => (
-                <div
-                  key={i}
-                  className="py-3 border-b"
-                  style={{ borderColor: "rgba(10,26,47,0.07)" }}
-                >
-                  <p
-                    className="text-[12.5px] font-medium mb-1"
-                    style={{ color: "#0A1A2F", fontFamily: "var(--font-display)" }}
-                  >
-                    {item.title}
-                  </p>
-                  <p
-                    className="text-[12px] leading-[1.65]"
-                    style={{ color: "#6B6660", fontFamily: "var(--font-display)" }}
-                  >
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {videos.map((video) => (
+              <VideoCard
+                key={video.id}
+                src={video.src}
+                poster={video.poster}
+                title={video.title}
+                programme={video.programme}
+                duration={video.duration}
+                year={video.year}
+              />
+            ))}
           </div>
+
+          <p
+            className="text-[11px] tracking-[0.06em] mt-10 pt-8 border-t text-center"
+            style={{
+              color: "rgba(10,26,47,0.3)",
+              borderColor: "rgba(10,26,47,0.07)",
+              fontFamily: "var(--font-display)",
+            }}
+          >
+            {videos.length} videos — faculty-reviewed, anonymised, no operational detail disclosed
+          </p>
         </div>
       </section>
 
-      {/* ─── Video Policy ─────────────────────────────────── */}
+      {/* ─── Permitted Content ────────────────────────────── */}
       <section
         className="py-20 md:py-24"
         style={{ background: "#0A1A2F", borderTop: "1px solid rgba(242,239,233,0.05)" }}
@@ -222,7 +249,7 @@ export default function VideoGalleryPage() {
                 className="text-[15px] leading-[1.85] mb-6"
                 style={{ color: "#C9C6BF", fontFamily: "var(--font-editorial)", fontStyle: "italic" }}
               >
-                Quantum Intel's video gallery is a controlled showcase of programme delivery. It is not a marketing channel, and it does not compromise the confidentiality of participants or client institutions.
+                Quantum Intel&apos;s video gallery is a controlled showcase of programme delivery. It is not a marketing channel, and it does not compromise the confidentiality of participants or client institutions.
               </p>
               <p
                 className="text-[14px] leading-[1.8]"
@@ -244,33 +271,58 @@ export default function VideoGalleryPage() {
                   className="text-[10px] tracking-[0.2em] uppercase"
                   style={{ color: "#B8945A", fontFamily: "var(--font-display)" }}
                 >
-                  What is prohibited
+                  Permitted video content
                 </p>
               </div>
-              {[
-                "Content identifying a client institution",
-                "Content identifying a participant by name, rank, or unit",
-                "Operational detail of any kind",
-                "Named testimonials from security/intelligence clients",
-                "Location data beyond city level",
-              ].map((item, i) => (
+              {permittedContent.map((item, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-4 px-8 py-4 border-b"
+                  className="px-8 py-5 border-b"
                   style={{ borderColor: "rgba(242,239,233,0.06)" }}
                 >
-                  <div
-                    className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0"
-                    style={{ background: "rgba(242,239,233,0.2)" }}
-                  />
                   <p
-                    className="text-[13px] leading-[1.65]"
+                    className="text-[12.5px] font-medium mb-1.5"
+                    style={{ color: "#F2EFE9", fontFamily: "var(--font-display)" }}
+                  >
+                    {item.title}
+                  </p>
+                  <p
+                    className="text-[12px] leading-[1.65]"
                     style={{ color: "rgba(242,239,233,0.45)", fontFamily: "var(--font-display)" }}
                   >
-                    {item}
+                    {item.description}
                   </p>
                 </div>
               ))}
+
+              <div className="px-8 py-5">
+                <p
+                  className="text-[10px] tracking-[0.2em] uppercase mb-4"
+                  style={{ color: "rgba(242,239,233,0.25)", fontFamily: "var(--font-display)" }}
+                >
+                  What is prohibited
+                </p>
+                {[
+                  "Content identifying a client institution",
+                  "Content identifying a participant by name, rank, or unit",
+                  "Operational detail of any kind",
+                  "Named testimonials from security or intelligence clients",
+                  "Location data beyond city level",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3 py-1.5">
+                    <div
+                      className="w-1 h-1 rounded-full mt-1.5 shrink-0"
+                      style={{ background: "rgba(242,239,233,0.2)" }}
+                    />
+                    <p
+                      className="text-[12px] leading-[1.65]"
+                      style={{ color: "rgba(242,239,233,0.4)", fontFamily: "var(--font-display)" }}
+                    >
+                      {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

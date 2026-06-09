@@ -16,7 +16,7 @@ const principles = [
   },
   {
     number: "04",
-    title: "Faculty Calibre",
+    title: "Consultant Calibre",
     body: "Delivery is led by senior practitioners and subject-matter authorities drawn from defence, intelligence, security, and technology backgrounds.",
   },
 ];

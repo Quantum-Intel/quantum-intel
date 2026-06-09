@@ -13,9 +13,11 @@ const sectionIndex = [
 export default function Hero() {
   return (
     <section
-      className="relative min-h-screen flex flex-col"
-      style={{ background: "#0A1A2F" }}
+      className="relative min-h-screen flex flex-col bg-cover bg-right bg-no-repeat"
+      style={{backgroundImage: "url('/heroBg.jpg')" }}
     >
+      {/* Starts solid dark blue on the left, stays solid until 40%, fades, and becomes completely transparent on the right */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#091124] from-43% via-[#091124]/70 via-70% to-transparent z-0"></div>
       {/* Static structural grid */}
       {/* <div
         className="absolute inset-0 pointer-events-none"
@@ -44,7 +46,7 @@ export default function Hero() {
       />
 
       {/* Main content area */}
-      <div className="relative z-10 flex-1 flex items-center max-w-[1280px] mx-auto px-6 w-full">
+      <div className="relative z-10 flex-1 flex items-center max-w-[1280px] mx-auto px-6 w-full" >
         <div className="w-full pt-32 pb-24">
           <div className="grid grid-cols-1 xl:grid-cols-[62%_38%] gap-0">
 

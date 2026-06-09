@@ -32,15 +32,6 @@ export default function PositioningBand() {
               communications, military intelligence, cyber security, artificial
               intelligence, and emerging technologies in modern warfare.
             </p>
-            <div className="mt-10 h-px" style={{ background: "rgba(10,26,47,0.07)" }} />
-            <p
-              className="mt-8 text-[13px] leading-[1.7] max-w-[480px]"
-              style={{ color: "#6B6660", fontFamily: "var(--font-display)" }}
-            >
-              Programmes are grounded in the African operating environment and
-              delivered to the standard expected by state-grade institutions across
-              Nigeria and the wider continent.
-            </p>
           </div>
         </div>
       </div>

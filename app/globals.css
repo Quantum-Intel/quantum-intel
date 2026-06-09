@@ -104,3 +104,44 @@ body {
 .qi-card-border-hover:hover {
   border-color: rgba(184, 148, 90, 0.3) !important;
 }
+
+/* ─── Gallery ────────────────────────────────────────────── */
+
+.qi-gallery-img {
+  transition: transform 0.45s ease;
+}
+.qi-gallery-card:hover .qi-gallery-img {
+  transform: scale(1.04);
+}
+
+/* ─── Skip link ──────────────────────────────────────────── */
+
+.qi-skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: #B8945A;
+  color: #0A1A2F;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: top 0.1s;
+}
+.qi-skip-link:focus {
+  top: 1rem;
+}
+
+/* ─── Reduced motion ─────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

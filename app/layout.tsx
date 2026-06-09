@@ -25,6 +25,7 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://quantumintel.africa"),
   title: {
     default: "Quantum Intel — Defence, Intelligence & Security Capability Partner in Africa",
     template: "%s — Quantum Intel",
@@ -35,6 +36,10 @@ export const metadata: Metadata = {
     siteName: "Quantum Intel",
     locale: "en_NG",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@quantumintel",
   },
 };
 
@@ -49,8 +54,11 @@ export default function RootLayout({
       className={`${inter.variable} ${interTight.variable} ${sourceSerif.variable}`}
     >
       <body>
+        <a href="#main-content" className="qi-skip-link">
+          Skip to main content
+        </a>
         <Navbar />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
       </body>
     </html>

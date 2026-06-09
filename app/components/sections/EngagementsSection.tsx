@@ -1,6 +1,6 @@
 const engagements = [
   {
-    ref: "QI-2024-017",
+    ref: "Dubai, UAE Q1 2025",
     sector: "National security institution",
     capability: "Military Intelligence",
     country: "Nigeria",
@@ -10,7 +10,7 @@ const engagements = [
     outcome: "Participants completed structured assessments demonstrating applied proficiency across core analytic tradecraft disciplines. A programme extension was commissioned within three months of completion.",
   },
   {
-    ref: "QI-2024-023",
+    ref: "Doha, Qatar  - Q2 2025",
     sector: "Federal ministry",
     capability: "Strategic Communications",
     country: "Nigeria",
@@ -20,7 +20,7 @@ const engagements = [
     outcome: "The institution developed and published an internal strategic communications framework based on outputs from the programme. A second cohort was contracted at programme conclusion.",
   },
   {
-    ref: "QI-2024-031",
+    ref: "Kigali, Rwanda - Q1 2026",
     sector: "Tier-1 bank",
     capability: "Cyber Security & Infrastructure Defence",
     country: "Nigeria",
