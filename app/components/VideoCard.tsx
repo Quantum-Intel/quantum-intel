@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Play } from "lucide-react";
 
 interface VideoCardProps {
@@ -11,99 +11,81 @@ interface VideoCardProps {
   year: string;
 }
 
-export default function VideoCard({
-  src,
-  poster,
-  title,
-  programme,
-  duration,
-  year,
-}: VideoCardProps) {
+export default function VideoCard({ src, poster, title, programme, duration, year }: VideoCardProps) {
   const [playing, setPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  function handlePlay() {
-    if (videoRef.current) {
-      videoRef.current.play();
-      setPlaying(true);
-    }
-  }
 
   return (
     <div>
-      <div
-        style={{
-          position: "relative",
-          overflow: "hidden",
-          background: "#14171C",
-        }}
-      >
-        <video
-          ref={videoRef}
-          src={src}
-          poster={poster}
-          preload="none"
-          controls={playing}
-          onEnded={() => setPlaying(false)}
-          style={{
-            width: "100%",
-            aspectRatio: "16/9",
-            display: "block",
-            objectFit: "cover",
-          }}
-        />
-
-        {!playing && (
+      <div style={{ position: "relative", overflow: "hidden", background: "#14171C" }}>
+        {playing ? (
+          <iframe
+            src={src}
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            style={{ width: "100%", aspectRatio: "16/9", display: "block", border: "none" }}
+          />
+        ) : (
           <button
-            onClick={handlePlay}
+            onClick={() => setPlaying(true)}
             aria-label={`Play ${title}`}
             style={{
-              position: "absolute",
-              inset: 0,
-              background: "rgba(10,26,47,0.28)",
+              display: "block",
+              width: "100%",
+              padding: 0,
               border: "none",
               cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: 0,
+              background: "none",
+              position: "relative",
             }}
           >
-            <span
-              style={{
-                width: 52,
-                height: 52,
-                borderRadius: "50%",
-                background: "#B8945A",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow: "0 4px 24px rgba(0,0,0,0.45)",
-                flexShrink: 0,
-              }}
-            >
-              <Play
-                size={19}
-                color="#0A1A2F"
-                fill="#0A1A2F"
-                style={{ marginLeft: 3 }}
+            {poster && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={poster}
+                alt=""
+                style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", display: "block" }}
               />
-            </span>
-
+            )}
             <span
               style={{
                 position: "absolute",
-                bottom: 10,
-                right: 10,
-                background: "rgba(10,26,47,0.82)",
-                color: "#F2EFE9",
-                fontSize: 11,
-                fontFamily: "var(--font-display)",
-                letterSpacing: "0.04em",
-                padding: "3px 8px",
+                inset: 0,
+                background: "rgba(10,26,47,0.28)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
-              {duration}
+              <span
+                style={{
+                  width: 52,
+                  height: 52,
+                  borderRadius: "50%",
+                  background: "#B8945A",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  boxShadow: "0 4px 24px rgba(0,0,0,0.45)",
+                  flexShrink: 0,
+                }}
+              >
+                <Play size={19} color="#0A1A2F" fill="#0A1A2F" style={{ marginLeft: 3 }} />
+              </span>
+              <span
+                style={{
+                  position: "absolute",
+                  bottom: 10,
+                  right: 10,
+                  background: "rgba(10,26,47,0.82)",
+                  color: "#F2EFE9",
+                  fontSize: 11,
+                  fontFamily: "var(--font-display)",
+                  letterSpacing: "0.04em",
+                  padding: "3px 8px",
+                }}
+              >
+                {duration}
+              </span>
             </span>
           </button>
         )}
@@ -134,13 +116,7 @@ export default function VideoCard({
         >
           {title}
         </p>
-        <p
-          style={{
-            fontSize: 11,
-            color: "#6B6660",
-            fontFamily: "var(--font-sans)",
-          }}
-        >
+        <p style={{ fontSize: 11, color: "#6B6660", fontFamily: "var(--font-sans)" }}>
           {year}
         </p>
       </div>

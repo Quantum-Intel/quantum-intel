@@ -73,8 +73,7 @@ export default function Footer() {
               across Africa.
             </p>
             <div className="space-y-1.5">
-              <p className="text-[12px]" style={{ color: "#C9C6BF" }}>Lagos, Nigeria</p>
-              <p className="text-[12px]" style={{ color: "#C9C6BF" }}>Abuja, Nigeria</p>
+              <p className="text-[12px]" style={{ color: "#C9C6BF" }}>Abuja, Federal Capital Territory, Nigeria</p>
               <a
                 href="mailto:corporate@quantumintel.co"
                 className="text-[12px] qi-text-hover-gold block"
@@ -161,7 +160,7 @@ export default function Footer() {
             </p>
             <span className="hidden sm:block text-[12px]" style={{ color: "#2F3540" }}>·</span>
             <p className="text-[12px]" style={{ color: "#C9C6BF" }}>
-              Registered in the Federal Republic of Nigeria.
+              Quantum Intel Limited (RC No. 8186539). Registered in the Federal Republic of Nigeria.
             </p>
           </div>
 

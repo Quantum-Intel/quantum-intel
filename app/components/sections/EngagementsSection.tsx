@@ -21,7 +21,7 @@ const engagements = [
   },
   {
     ref: "Kigali, Rwanda - Q1 2026",
-    sector: "Tier-1 bank",
+    sector: "National Security Institution",
     capability: "Cyber Security & Infrastructure Defence",
     country: "Nigeria",
     duration: "10 days",

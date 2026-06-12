@@ -148,6 +148,9 @@ export default function TermsPage() {
               <p className="mt-10 text-[12.5px] leading-[1.7]" style={{ color: "#9A9690" }}>
                 For enquiries about these terms: <a href="mailto:corporate@quantumintel.co" style={{ color: "#B8945A" }}>corporate@quantumintel.co</a>
               </p>
+              <p className="mt-4 text-[12px] leading-[1.7]" style={{ color: "#9A9690" }}>
+                Quantum Intel Limited (RC No. 8186539). Registered in the Federal Republic of Nigeria. Principal office: Abuja, Federal Capital Territory, Nigeria.
+              </p>
             </div>
           </div>
         </div>

@@ -477,7 +477,7 @@ export default function AboutPage() {
                     className="text-[11px]"
                     style={{ color: "rgba(242,239,233,0.2)", fontFamily: "var(--font-display)" }}
                   >
-                    Registered in the Federal Republic of Nigeria.
+                    Quantum Intel Limited (RC No. 8186539). Registered in the Federal Republic of Nigeria.
                   </p>
                 </div>
               </div>

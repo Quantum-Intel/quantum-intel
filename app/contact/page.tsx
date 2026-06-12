@@ -58,7 +58,7 @@ const offices = [
     city: "Abuja",
     country: "Nigeria",
     email: "abuja@quantumintel.africa",
-    note: "Government & federal engagement",
+    note: "Principal Office — Federal Capital Territory",
   },
 ];
 

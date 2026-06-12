@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import VideoCard from "@/app/components/VideoCard";
+import { getVideos } from "@/app/lib/vimeo";
 
 export const metadata: Metadata = {
   title: "Programme Gallery — Videos",
@@ -32,70 +33,8 @@ const permittedContent = [
   },
 ];
 
-// Placeholder video sources: W3Schools & MDN CC0 sample files.
-// Replace src values with real hosted content when available.
-const W3S_BBB = "https://www.w3schools.com/html/mov_bbb.mp4";
-const W3S_MOV = "https://www.w3schools.com/html/movie.mp4";
-const MDN_FLOWER = "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4";
-
-const videos = [
-  {
-    id: "01",
-    src: W3S_BBB,
-    poster: "https://picsum.photos/seed/qi-vid-01/1280/720",
-    title: "Advanced Capability Programme — Module Overview",
-    programme: "Advanced Capability Program",
-    duration: "4:32",
-    year: "2024",
-  },
-  {
-    id: "02",
-    src: MDN_FLOWER,
-    poster: "https://picsum.photos/seed/qi-vid-02/1280/720",
-    title: "Intelligence Analysis: Framework and Methodology",
-    programme: "Military Intelligence",
-    duration: "6:15",
-    year: "2024",
-  },
-  {
-    id: "03",
-    src: W3S_MOV,
-    poster: "https://picsum.photos/seed/qi-vid-03/1280/720",
-    title: "Cyber Threat Landscape — Faculty Briefing",
-    programme: "Cyber Security",
-    duration: "8:47",
-    year: "2024",
-  },
-  {
-    id: "04",
-    src: MDN_FLOWER,
-    poster: "https://picsum.photos/seed/qi-vid-04/1280/720",
-    title: "Emerging Technology in Conflict — Overview",
-    programme: "Emerging Technologies",
-    duration: "5:20",
-    year: "2023",
-  },
-  {
-    id: "05",
-    src: W3S_BBB,
-    poster: "https://picsum.photos/seed/qi-vid-05/1280/720",
-    title: "Strategic Communications Programme Walkthrough",
-    programme: "Strategic Communications",
-    duration: "3:58",
-    year: "2023",
-  },
-  {
-    id: "06",
-    src: W3S_MOV,
-    poster: "https://picsum.photos/seed/qi-vid-06/1280/720",
-    title: "AI Governance in Security Contexts",
-    programme: "Artificial Intelligence",
-    duration: "7:14",
-    year: "2024",
-  },
-];
-
-export default function VideoGalleryPage() {
+export default async function VideoGalleryPage() {
+  const videos = await getVideos();
   return (
     <>
       {/* ─── Hero ─────────────────────────────────────────── */}

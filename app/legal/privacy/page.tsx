@@ -12,7 +12,7 @@ const sections = [
     number: "1",
     title: "Data Controller",
     content:
-      "Quantum Intel is registered in the Federal Republic of Nigeria. As data controller, Quantum Intel determines the purposes and means of processing personal data submitted through this website and through engagement channels. For data protection enquiries, contact: security@quantumintel.africa.",
+      "Quantum Intel Limited (RC No. 8186539) is registered in the Federal Republic of Nigeria, with its principal office at Abuja, Federal Capital Territory, Nigeria. As data controller, Quantum Intel determines the purposes and means of processing personal data submitted through this website and through engagement channels. For data protection enquiries, contact: security@quantumintel.africa.",
   },
   {
     number: "2",

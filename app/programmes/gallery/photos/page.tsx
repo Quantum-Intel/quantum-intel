@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { getPhotos } from "@/app/lib/cloudinary";
 
 export const metadata: Metadata = {
   title: "Programme Gallery — Photos",
@@ -22,90 +23,8 @@ const filters = {
   country: ["Nigeria", "Kenya", "Rwanda", "West Africa Region"],
 };
 
-const photos = [
-  {
-    id: "01",
-    src: "https://picsum.photos/seed/qi-field-01/1200/800",
-    caption: "Scenario planning — threat assessment table exercise",
-    programme: "Advanced Capability Program",
-    region: "Abuja, Nigeria",
-    year: "2024",
-  },
-  {
-    id: "02",
-    src: "https://picsum.photos/seed/qi-field-02/800/600",
-    caption: "Intelligence analysis seminar, faculty-led",
-    programme: "Military Intelligence",
-    region: "Lagos, Nigeria",
-    year: "2024",
-  },
-  {
-    id: "03",
-    src: "https://picsum.photos/seed/qi-field-03/800/600",
-    caption: "Operational planning workshop — command post exercise",
-    programme: "Strategic Communications",
-    region: "Nairobi, Kenya",
-    year: "2023",
-  },
-  {
-    id: "04",
-    src: "https://picsum.photos/seed/qi-field-04/800/600",
-    caption: "Cyber threat simulation environment setup",
-    programme: "Cyber Security",
-    region: "Abuja, Nigeria",
-    year: "2024",
-  },
-  {
-    id: "05",
-    src: "https://picsum.photos/seed/qi-field-05/800/600",
-    caption: "Emerging technology briefing session",
-    programme: "Emerging Technologies",
-    region: "Kigali, Rwanda",
-    year: "2024",
-  },
-  {
-    id: "06",
-    src: "https://picsum.photos/seed/qi-field-06/800/600",
-    caption: "AI governance and ethics module — group discussion",
-    programme: "Artificial Intelligence",
-    region: "Lagos, Nigeria",
-    year: "2023",
-  },
-  {
-    id: "07",
-    src: "https://picsum.photos/seed/qi-field-07/800/600",
-    caption: "Programme completion ceremony, cohort 4",
-    programme: "Advanced Capability Program",
-    region: "Abuja, Nigeria",
-    year: "2024",
-  },
-  {
-    id: "08",
-    src: "https://picsum.photos/seed/qi-field-08/800/600",
-    caption: "Strategic communications — media exercise",
-    programme: "Strategic Communications",
-    region: "West Africa Region",
-    year: "2023",
-  },
-  {
-    id: "09",
-    src: "https://picsum.photos/seed/qi-field-09/1200/800",
-    caption: "Joint intelligence assessment briefing",
-    programme: "Military Intelligence",
-    region: "Abuja, Nigeria",
-    year: "2024",
-  },
-  {
-    id: "10",
-    src: "https://picsum.photos/seed/qi-field-10/800/600",
-    caption: "Counter-terrorism tabletop exercise",
-    programme: "Advanced Capability Program",
-    region: "Nairobi, Kenya",
-    year: "2023",
-  },
-];
-
-export default function PhotoGalleryPage() {
+export default async function PhotoGalleryPage() {
+  const photos = await getPhotos();
   return (
     <>
       {/* ─── Hero ─────────────────────────────────────────── */}
