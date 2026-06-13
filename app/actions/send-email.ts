@@ -4,6 +4,7 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const FROM = "corporate@email.quantumintel.co";
+const ADMIN_EMAIL = "corporate@quantumintel.co";
 
 function row(label: string, value: string | undefined) {
   if (!value) return "";
@@ -25,9 +26,10 @@ export async function sendProposalEmail(formData: FormData) {
   const capabilities = (formData.getAll("capabilities") as string[]).join(", ") || "—";
   const userEmail = formData.get("email") as string;
 
-  const { error } = await resend.emails.send({
+  // Send to admin
+  const { error: adminError } = await resend.emails.send({
     from: FROM,
-    to: userEmail,
+    to: ADMIN_EMAIL,
     subject: `Proposal Request — ${formData.get("organisation")} (${formData.get("name")})`,
     html: template("New Proposal Request", [
       row("Name", formData.get("name") as string),
@@ -45,7 +47,19 @@ export async function sendProposalEmail(formData: FormData) {
     ].join("")),
   });
 
-  if (error) return { ok: false, error: error.message };
+  if (adminError) return { ok: false, error: adminError.message };
+
+  // Send confirmation to user
+  const { error: userError } = await resend.emails.send({
+    from: FROM,
+    to: userEmail,
+    subject: "Proposal Request Received",
+    html: template("Request Received", [
+      row("Thank you", "We have received your proposal request and will get back to you shortly."),
+    ].join("")),
+  });
+
+  if (userError) return { ok: false, error: userError.message };
   return { ok: true };
 }
 
@@ -54,9 +68,10 @@ export async function sendPartnerEmail(formData: FormData) {
 
   const userEmail = formData.get("email") as string;
 
-  const { error } = await resend.emails.send({
+  // Send to admin
+  const { error: adminError } = await resend.emails.send({
     from: FROM,
-    to: userEmail,
+    to: ADMIN_EMAIL,
     subject: `Partnership Enquiry — ${formData.get("organisation")} (${formData.get("name")})`,
     html: template("New Partnership Enquiry", [
       row("Name", formData.get("name") as string),
@@ -69,7 +84,19 @@ export async function sendPartnerEmail(formData: FormData) {
     ].join("")),
   });
 
-  if (error) return { ok: false, error: error.message };
+  if (adminError) return { ok: false, error: adminError.message };
+
+  // Send confirmation to user
+  const { error: userError } = await resend.emails.send({
+    from: FROM,
+    to: userEmail,
+    subject: "Partnership Enquiry Received",
+    html: template("Request Received", [
+      row("Thank you", "We have received your partnership enquiry and will get back to you shortly."),
+    ].join("")),
+  });
+
+  if (userError) return { ok: false, error: userError.message };
   return { ok: true };
 }
 
@@ -78,9 +105,10 @@ export async function sendMediaEmail(formData: FormData) {
 
   const userEmail = formData.get("email") as string;
 
-  const { error } = await resend.emails.send({
+  // Send to admin
+  const { error: adminError } = await resend.emails.send({
     from: FROM,
-    to: userEmail,
+    to: ADMIN_EMAIL,
     subject: `Media Enquiry — ${formData.get("publication")} (${formData.get("name")})`,
     html: template("New Media Enquiry", [
       row("Name", formData.get("name") as string),
@@ -95,7 +123,19 @@ export async function sendMediaEmail(formData: FormData) {
     ].join("")),
   });
 
-  if (error) return { ok: false, error: error.message };
+  if (adminError) return { ok: false, error: adminError.message };
+
+  // Send confirmation to user
+  const { error: userError } = await resend.emails.send({
+    from: FROM,
+    to: userEmail,
+    subject: "Media Enquiry Received",
+    html: template("Request Received", [
+      row("Thank you", "We have received your media enquiry and will get back to you shortly."),
+    ].join("")),
+  });
+
+  if (userError) return { ok: false, error: userError.message };
   return { ok: true };
 }
 
@@ -104,9 +144,10 @@ export async function sendGeneralEnquiryEmail(formData: FormData) {
 
   const userEmail = formData.get("email") as string;
 
-  const { error } = await resend.emails.send({
+  // Send to admin
+  const { error: adminError } = await resend.emails.send({
     from: FROM,
-    to: userEmail,
+    to: ADMIN_EMAIL,
     subject: `General Enquiry — ${formData.get("organisation")} (${formData.get("name")})`,
     html: template("New General Enquiry", [
       row("Name", formData.get("name") as string),
@@ -119,6 +160,18 @@ export async function sendGeneralEnquiryEmail(formData: FormData) {
     ].join("")),
   });
 
-  if (error) return { ok: false, error: error.message };
+  if (adminError) return { ok: false, error: adminError.message };
+
+  // Send confirmation to user
+  const { error: userError } = await resend.emails.send({
+    from: FROM,
+    to: userEmail,
+    subject: "General Enquiry Received",
+    html: template("Request Received", [
+      row("Thank you", "We have received your enquiry and will get back to you shortly."),
+    ].join("")),
+  });
+
+  if (userError) return { ok: false, error: userError.message };
   return { ok: true };
 }
