@@ -12,7 +12,7 @@ const sections = [
     number: "1",
     title: "Data Controller",
     content:
-      "Quantum Intel Limited (RC No. 8186539) is registered in the Federal Republic of Nigeria, with its principal office at Abuja, Federal Capital Territory, Nigeria. As data controller, Quantum Intel determines the purposes and means of processing personal data submitted through this website and through engagement channels. For data protection enquiries, contact: security@quantumintel.africa.",
+      "Quantum Intel Limited (RC No. 8186539) is registered in the Federal Republic of Nigeria, with its principal office at Abuja, Federal Capital Territory, Nigeria. As data controller, Quantum Intel determines the purposes and means of processing personal data submitted through this website and through engagement channels. For data protection enquiries, contact: corporate@email.quantumintel.co.",
   },
   {
     number: "2",
@@ -36,7 +36,7 @@ const sections = [
     number: "5",
     title: "International Transfers",
     content:
-      "Where personal data is transferred to service providers outside Nigeria, we implement appropriate safeguards consistent with the requirements of the Nigeria Data Protection Act 2023. Details of transfer mechanisms are available on request to security@quantumintel.africa.",
+      "Where personal data is transferred to service providers outside Nigeria, we implement appropriate safeguards consistent with the requirements of the Nigeria Data Protection Act 2023. Details of transfer mechanisms are available on request to corporate@email.quantumintel.co.",
   },
   {
     number: "6",
@@ -48,7 +48,7 @@ const sections = [
     number: "7",
     title: "Your Rights",
     content:
-      "Under the Nigeria Data Protection Act 2023, you have the right to request access to, rectification or erasure of, and objection to or restriction of processing of your personal data. You have the right to data portability and the right to withdraw consent where processing is consent-based. To exercise any of these rights, contact security@quantumintel.africa. You also have the right to lodge a complaint with the Nigeria Data Protection Commission (NDPC).",
+      "Under the Nigeria Data Protection Act 2023, you have the right to request access to, rectification or erasure of, and objection to or restriction of processing of your personal data. You have the right to data portability and the right to withdraw consent where processing is consent-based. To exercise any of these rights, contact corporate@email.quantumintel.co. You also have the right to lodge a complaint with the Nigeria Data Protection Commission (NDPC).",
   },
   {
     number: "8",
@@ -193,8 +193,8 @@ export default function PrivacyPage() {
               <div className="mt-10 pt-8 border-t" style={{ borderColor: "rgba(10,26,47,0.07)" }}>
                 <p className="text-[12.5px] leading-[1.7]" style={{ color: "#9A9690" }}>
                   Data protection enquiries:{" "}
-                  <a href="mailto:security@quantumintel.africa" style={{ color: "#B8945A" }}>
-                    security@quantumintel.africa
+                  <a href="mailto:corporate@email.quantumintel.co" style={{ color: "#B8945A" }}>
+                    corporate@email.quantumintel.co
                   </a>
                   . Supervisory authority: Nigeria Data Protection Commission (NDPC), ndpc.gov.ng.
                 </p>

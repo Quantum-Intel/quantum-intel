@@ -120,11 +120,11 @@ export default function RequestProposalPage() {
                     Direct proposals
                   </p>
                   <a
-                    href="mailto:proposals@quantumintel.africa"
+                    href="mailto:corporate@email.quantumintel.co"
                     className="text-[13px] qi-text-hover-gold"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
-                    proposals@quantumintel.africa
+                    corporate@email.quantumintel.co
                   </a>
                 </div>
                 <div className="h-px" style={{ background: "rgba(242,239,233,0.06)" }} />

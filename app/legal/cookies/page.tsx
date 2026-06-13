@@ -113,7 +113,7 @@ export default function CookiesPage() {
               ))}
 
               <p className="text-[12.5px] leading-[1.7]" style={{ color: "#9A9690" }}>
-                For cookie-related enquiries: <a href="mailto:security@quantumintel.africa" style={{ color: "#B8945A" }}>security@quantumintel.africa</a>
+                For cookie-related enquiries: <a href="mailto:corporate@email.quantumintel.co" style={{ color: "#B8945A" }}>corporate@email.quantumintel.co</a>
               </p>
             </div>
           </div>

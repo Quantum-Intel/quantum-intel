@@ -75,10 +75,10 @@ export default function Footer() {
             <div className="space-y-1.5">
               <p className="text-[12px]" style={{ color: "#C9C6BF" }}>Abuja, Federal Capital Territory, Nigeria</p>
               <a
-                href="mailto:corporate@quantumintel.co"
+                href="mailto:corporate@email.quantumintel.co"
                 className="text-[12px] qi-text-hover-gold block"
               >
-                corporate@quantumintel.co
+                corporate@email.quantumintel.co
               </a>
             </div>
           </div>

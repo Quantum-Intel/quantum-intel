@@ -66,11 +66,11 @@ export default function SecurityPage() {
               <div className="mt-8 pt-8 border-t" style={{ borderColor: "rgba(10,26,47,0.07)" }}>
                 <p className="text-[11px] mb-2" style={{ color: "#9A9690", fontFamily: "var(--font-display)" }}>Security contact</p>
                 <a
-                  href="mailto:security@quantumintel.africa"
+                  href="mailto:corporate@email.quantumintel.co"
                   className="text-[12px] qi-text-hover-gold"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  security@quantumintel.africa
+                  corporate@email.quantumintel.co
                 </a>
               </div>
             </div>
@@ -105,7 +105,7 @@ export default function SecurityPage() {
                 {
                   number: "6",
                   title: "Vulnerability Disclosure",
-                  content: "If you identify a security vulnerability in this website or in Quantum Intel's systems, please report it responsibly to security@quantumintel.africa. We will acknowledge your report within 2 business days and work to address confirmed vulnerabilities promptly. We ask that you do not publicly disclose vulnerabilities before we have had the opportunity to investigate and remediate.",
+                  content: "If you identify a security vulnerability in this website or in Quantum Intel's systems, please report it responsibly to corporate@email.quantumintel.co. We will acknowledge your report within 2 business days and work to address confirmed vulnerabilities promptly. We ask that you do not publicly disclose vulnerabilities before we have had the opportunity to investigate and remediate.",
                 },
                 {
                   number: "7",
@@ -115,7 +115,7 @@ export default function SecurityPage() {
                 {
                   number: "8",
                   title: "Secure Correspondence",
-                  content: "For clients who require enhanced security for their enquiries, secure correspondence via Signal is available on request. Contact security@quantumintel.africa to arrange. We also accept written correspondence at our registered offices in Lagos and Abuja.",
+                  content: "For clients who require enhanced security for their enquiries, secure correspondence via Signal is available on request. Contact corporate@email.quantumintel.co to arrange. We also accept written correspondence at our registered offices in Lagos and Abuja.",
                 },
               ].map((s) => (
                 <div key={s.number} className="pb-10 border-b" style={{ borderColor: "rgba(10,26,47,0.07)" }}>
@@ -137,8 +137,8 @@ export default function SecurityPage() {
                 </p>
                 <p className="text-[14px] leading-[1.75]" style={{ color: "#5A5550" }}>
                   Security and confidentiality enquiries, vulnerability disclosures, and data subject requests:{" "}
-                  <a href="mailto:security@quantumintel.africa" style={{ color: "#B8945A" }}>
-                    security@quantumintel.africa
+                  <a href="mailto:corporate@email.quantumintel.co" style={{ color: "#B8945A" }}>
+                    corporate@email.quantumintel.co
                   </a>
                 </p>
               </div>

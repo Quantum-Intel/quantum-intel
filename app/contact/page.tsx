@@ -52,13 +52,13 @@ const offices = [
   {
     city: "Lagos",
     country: "Nigeria",
-    email: "lagos@quantumintel.africa",
+    email: "corporate@email.quantumintel.co",
     note: "West Africa operations",
   },
   {
     city: "Abuja",
     country: "Nigeria",
-    email: "abuja@quantumintel.africa",
+    email: "corporate@email.quantumintel.co",
     note: "Principal Office — Federal Capital Territory",
   },
 ];
@@ -371,11 +371,11 @@ export default function ContactPage() {
                 All initial enquiries
               </p>
               <a
-                href="mailto:corporate@quantumintel.co"
+                href="mailto:corporate@email.quantumintel.co"
                 className="text-[13px] qi-text-hover-gold"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                corporate@quantumintel.co
+                corporate@email.quantumintel.co
               </a>
             </div>
           </div>
@@ -397,11 +397,11 @@ export default function ContactPage() {
               </p>
             </div>
             {[
-              { purpose: "General enquiries", email: "corporate@quantumintel.co" },
-              { purpose: "Proposals & programme requests", email: "proposals@quantumintel.africa" },
-              { purpose: "Partnership enquiries", email: "partners@quantumintel.africa" },
-              { purpose: "Media & press", email: "media@quantumintel.africa" },
-              { purpose: "Security & confidentiality", email: "security@quantumintel.africa" },
+              { purpose: "General enquiries", email: "corporate@email.quantumintel.co" },
+              { purpose: "Proposals & programme requests", email: "corporate@email.quantumintel.co" },
+              { purpose: "Partnership enquiries", email: "corporate@email.quantumintel.co" },
+              { purpose: "Media & press", email: "corporate@email.quantumintel.co" },
+              { purpose: "Security & confidentiality", email: "corporate@email.quantumintel.co" },
             ].map((item) => (
               <div
                 key={item.email}

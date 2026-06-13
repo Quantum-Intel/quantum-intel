@@ -191,11 +191,11 @@ export default function PartnerWithUsPage() {
                     Direct contact
                   </p>
                   <a
-                    href="mailto:partners@quantumintel.africa"
+                    href="mailto:corporate@email.quantumintel.co"
                     className="text-[13px] qi-text-hover-gold"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
-                    partners@quantumintel.africa
+                    corporate@email.quantumintel.co
                   </a>
                 </div>
               </div>

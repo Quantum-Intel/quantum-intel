@@ -164,11 +164,11 @@ export default function MediaPage() {
                     Media contact
                   </p>
                   <a
-                    href="mailto:media@quantumintel.africa"
+                    href="mailto:corporate@email.quantumintel.co"
                     className="text-[13px] qi-text-hover-gold"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
-                    media@quantumintel.africa
+                    corporate@email.quantumintel.co
                   </a>
                 </div>
                 <div className="h-px" style={{ background: "rgba(242,239,233,0.06)" }} />

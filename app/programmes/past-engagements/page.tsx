@@ -216,11 +216,11 @@ export default function PastEngagementsPage() {
             >
               <strong style={{ color: "rgba(242,239,233,0.8)" }}>Confidentiality policy.</strong> All engagements are described in anonymised terms. Client names, institution identities, specific locations beyond country level, and participant details are withheld by default. Engagement references are available to qualified institutional enquirers on request to{" "}
               <a
-                href="mailto:corporate@quantumintel.co"
+                href="mailto:corporate@email.quantumintel.co"
                 className="underline underline-offset-2"
                 style={{ color: "#B8945A" }}
               >
-                corporate@quantumintel.co
+                corporate@email.quantumintel.co
               </a>
               .
             </p>
