@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import { sendPartnerEmail } from "@/app/actions/send-email";
 
 const inputClass =
   "w-full px-4 py-3.5 text-[14px] border bg-transparent outline-none transition-colors";
@@ -16,10 +17,20 @@ const labelStyle = { color: "rgba(242,239,233,0.45)", fontFamily: "var(--font-di
 
 export default function PartnerForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+    const result = await sendPartnerEmail(new FormData(e.currentTarget));
+    if (result.ok) {
+      setSubmitted(true);
+    } else {
+      setError("Something went wrong. Please try again or email us directly.");
+    }
+    setLoading(false);
   }
 
   if (submitted) {
@@ -187,14 +198,18 @@ export default function PartnerForm() {
 
       <input type="text" name="_trap" className="hidden" tabIndex={-1} aria-hidden="true" />
 
+      {error && (
+        <p className="text-[13px]" style={{ color: "#E05252" }}>{error}</p>
+      )}
       <div>
         <button
           type="submit"
-          className="qi-btn-gold inline-flex items-center gap-3 px-8 py-4 text-[11px] tracking-[0.14em] uppercase font-semibold"
+          disabled={loading}
+          className="qi-btn-gold inline-flex items-center gap-3 px-8 py-4 text-[11px] tracking-[0.14em] uppercase font-semibold disabled:opacity-60"
           style={{ fontFamily: "var(--font-display)" }}
         >
-          Submit Partnership Enquiry
-          <ArrowRight size={12} />
+          {loading ? "Sending…" : "Submit Partnership Enquiry"}
+          {!loading && <ArrowRight size={12} />}
         </button>
       </div>
     </form>

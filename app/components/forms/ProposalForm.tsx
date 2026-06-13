@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import { sendProposalEmail } from "@/app/actions/send-email";
 
 const capabilities = [
   { id: "strategic-communications", label: "Strategic Communications" },
@@ -25,6 +26,8 @@ const labelStyle = { color: "rgba(242,239,233,0.45)", fontFamily: "var(--font-di
 
 export default function ProposalForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [capabilities_selected, setCapabilities] = useState<string[]>([]);
 
   function toggleCapability(id: string) {
@@ -33,9 +36,18 @@ export default function ProposalForm() {
     );
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+    const fd = new FormData(e.currentTarget);
+    const result = await sendProposalEmail(fd);
+    if (result.ok) {
+      setSubmitted(true);
+    } else {
+      setError("Something went wrong. Please try again or email us directly.");
+    }
+    setLoading(false);
   }
 
   if (submitted) {
@@ -312,14 +324,18 @@ export default function ProposalForm() {
       {/* Honeypot */}
       <input type="text" name="_trap" className="hidden" tabIndex={-1} aria-hidden="true" />
 
+      {error && (
+        <p className="text-[13px]" style={{ color: "#E05252" }}>{error}</p>
+      )}
       <div>
         <button
           type="submit"
-          className="qi-btn-gold inline-flex items-center gap-3 px-8 py-4 text-[11px] tracking-[0.14em] uppercase font-semibold"
+          disabled={loading}
+          className="qi-btn-gold inline-flex items-center gap-3 px-8 py-4 text-[11px] tracking-[0.14em] uppercase font-semibold disabled:opacity-60"
           style={{ fontFamily: "var(--font-display)" }}
         >
-          Submit Proposal Request
-          <ArrowRight size={12} />
+          {loading ? "Sending…" : "Submit Proposal Request"}
+          {!loading && <ArrowRight size={12} />}
         </button>
       </div>
     </form>
