@@ -36,10 +36,19 @@ export const metadata: Metadata = {
     siteName: "Quantum Intel",
     locale: "en_NG",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Quantum Intel",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@quantumintel",
+    images: ["/twitter-image"],
   },
 };
 
